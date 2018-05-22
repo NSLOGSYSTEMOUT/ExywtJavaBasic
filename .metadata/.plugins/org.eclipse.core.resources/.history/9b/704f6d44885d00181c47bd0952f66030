@@ -1,0 +1,17 @@
+package com.cn.eapi;
+
+import java.io.File;
+import java.util.Scanner;
+
+public class ScannerFileTest {
+
+	public static void main(String[] args) throws Exception{
+		
+		Scanner sc = new Scanner(new File("/Users/sai/Desktop/jiekou"));
+		System.out.println("scannerFileTest文件内容：");
+		while (sc.hasNextLine()) {
+			String string = (String) sc.next();
+			System.out.println(string);
+		}
+	}
+}
