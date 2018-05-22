@@ -1,0 +1,6 @@
+package enmuTest;
+
+public interface GenderDesc {
+
+	void info();
+}

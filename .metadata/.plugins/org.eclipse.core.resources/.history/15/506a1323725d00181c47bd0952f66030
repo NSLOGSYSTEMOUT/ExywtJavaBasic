@@ -1,0 +1,6 @@
+package mingling.moshi;
+
+public interface Command {
+
+	public void process(int[] target);
+}

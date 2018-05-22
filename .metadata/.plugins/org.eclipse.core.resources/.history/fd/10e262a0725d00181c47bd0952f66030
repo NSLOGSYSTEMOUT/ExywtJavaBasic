@@ -1,0 +1,6 @@
+package jiekou.face;
+
+public interface Product {
+
+	int getProduceTiem();
+}

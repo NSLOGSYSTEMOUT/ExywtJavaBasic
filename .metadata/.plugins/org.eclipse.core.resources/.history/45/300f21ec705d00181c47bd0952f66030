@@ -1,0 +1,7 @@
+package enmuTest;
+
+//
+public enum SeasonEnum {
+
+	SPRING,SUMMER,FALL,WINTE;
+}
