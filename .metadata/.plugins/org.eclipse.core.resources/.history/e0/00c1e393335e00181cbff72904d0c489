@@ -1,0 +1,41 @@
+package com.cn.date;
+
+import java.time.Clock;
+import java.time.LocalDate;
+import java.time.LocalTime;
+import java.time.Month;
+import java.util.Calendar;
+import java.util.Date;
+
+public class CalendarTest {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		Calendar calendar1 = Calendar.getInstance();
+		
+		Date date = calendar1.getTime();
+		
+		Calendar calendar2 = Calendar.getInstance();
+		calendar2.setTime(date);
+		//....add roll区别：超出允许范围是上级字段会不会增大 roll不会
+		//关闭容错性
+		calendar1.setLenient(false);
+		
+		System.out.println(LocalTime.now());
+		
+		//
+		Clock clock = Clock.systemUTC();
+		System.out.println("当前时刻为："+clock.instant());
+		
+		System.out.println(clock.millis());
+		System.out.println(System.currentTimeMillis());
+		
+		
+		
+		
+		
+
+	}
+
+}

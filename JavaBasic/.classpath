@@ -5,6 +5,7 @@
 	<classpathentry kind="src" path="命令模式"/>
 	<classpathentry kind="src" path="面向对象"/>
 	<classpathentry kind="src" path="基础类库"/>
+	<classpathentry kind="src" path="集合"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

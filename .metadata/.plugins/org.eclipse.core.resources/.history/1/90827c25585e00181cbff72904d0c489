@@ -1,0 +1,21 @@
+package com.cn.formart;
+
+import java.text.DateFormat;
+import java.util.Date;
+import java.util.Locale;
+
+public class DataFormatTest {
+
+	public static void main(String[] args)  throws Exception{
+		
+		Date date = new Date();
+		Locale[] locales={Locale.CHINA, Locale.US};
+		
+		DateFormat[] formats = new DateFormat[16];
+		
+		for (int i = 0; i < locales.length; i++) {
+			
+//			formats[i*8] = DateFormat.getDateInstance(ME, locales[i]);
+		}
+	}
+}

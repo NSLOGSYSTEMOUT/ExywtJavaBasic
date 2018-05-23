@@ -1,5 +1,8 @@
 package com.cn.regular;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.time.format.DateTimeFormatter;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -52,6 +55,8 @@ public class ReaularTest {
 			String result = mail +(matcher3.matches()?"shi":"bushi"+"一个有效的邮箱地址");
 			System.out.println(result);
 		}
+		
+
 	}
 
 }

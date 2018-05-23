@@ -1,0 +1,11 @@
+package com.cn.regular;
+
+public class ReaularTest {
+
+	public static void main(String[] args) {
+		String str = "hello world";
+		System.out.println(str.replaceFirst("\\w*", "✨"));
+		System.out.println(str.replaceFirst("\\w*?", "✨"));
+	}
+
+}

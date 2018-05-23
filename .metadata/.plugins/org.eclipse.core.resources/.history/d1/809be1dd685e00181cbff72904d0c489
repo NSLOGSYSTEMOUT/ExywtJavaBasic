@@ -1,0 +1,43 @@
+package com.cn.collection;
+
+import java.util.Collection;
+import java.util.HashSet;
+import java.util.function.Predicate;
+
+public class PredicateTest {
+
+	public static void main(String[] args) {
+		Collection<String> books = new HashSet<>();
+		books.add(new String("one"));
+		books.add(new String("one"));
+		books.add(new String("onew=two"));
+		books.add(new String("onethree"));
+		books.add(new String("onefor five"));
+		books.add(new String("onefor five"));
+		
+		books.removeIf(ele->((String)ele).length() <10);
+//		System.out.println(books);
+		
+		System.out.println(callAll(books, ele->(ele).contains("one")));
+		System.out.println(callAll(books, ele->(ele).contains("java")));
+		System.out.println(callAll(books, ele->(ele).length()>10));
+		
+	}
+	
+	public static int callAll(Collection<String> books, Predicate<String> p){
+		
+		int total = 0;
+		for (String obj : books) {
+			//Predicate的test方法
+			if (p.test(obj)) {
+					
+				total++;
+			}
+		}
+		
+		return total;
+	}
+	
+	
+	
+}

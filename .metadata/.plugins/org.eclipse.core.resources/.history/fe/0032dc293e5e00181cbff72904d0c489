@@ -1,0 +1,23 @@
+package com.cn.regular;
+
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+public class ReaularTest {
+
+	public static void main(String[] args) {
+		String str = "hello world";
+		System.out.println(str.replaceFirst("\\w*", "✨"));
+		System.out.println(str.replaceFirst("\\w*?", "✨"));
+		
+		//将一个字符串编译成一个pattern对象
+		Pattern pattern = Pattern.compile("a*b");
+		Matcher matcher = pattern.matcher("aaabbb");
+		boolean b = matcher.matches(); //返回ture
+		
+//		正则表达式只执行一次可用静态方法，相当于上面，但每次都需要重新编译Pattren对象
+		boolean b2 = Pattern.matches("a*b", "aabbb"); //返回ture
+		
+	}
+
+}
