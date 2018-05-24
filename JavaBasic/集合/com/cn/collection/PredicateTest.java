@@ -20,6 +20,7 @@ public class PredicateTest {
 		bookss.removeIf(ele->((String)ele).length() <10);
 //		System.out.println(books);
 		
+		//使用Collection的stream()方法可返回该集合对应的Stream对象
 		System.out.println("*"+bookss.stream().filter(ele->((String)ele).contains("java")).count());
 		
 		System.out.println("**"+callAll(bookss, ele->((String)ele).contains("one")));
