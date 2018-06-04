@@ -1,0 +1,12 @@
+package com.cn.xulieAndProperties;
+
+import java.util.zip.DeflaterOutputStream;
+
+public class DateSreamTest {
+
+	public static void main(String[] args) {
+		
+		
+	
+	}
+}

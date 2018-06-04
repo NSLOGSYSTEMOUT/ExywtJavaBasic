@@ -1,0 +1,13 @@
+package com.cn.fileIO;
+
+import java.io.File;
+
+public class FileTest {
+
+	
+	public static void main(String[] args) {
+		
+		File file = new File("//Users/sai/Desktop/今日头条");
+		System.out.println(file.exists());
+	}
+}

@@ -1,0 +1,11 @@
+package com.cn.xulieAndProperties;
+
+import java.io.IOException;
+
+public class ByteArrayOutPutStearmTest  {
+
+	public static void main(String[] args) throws IOException{
+		
+		
+	}
+}

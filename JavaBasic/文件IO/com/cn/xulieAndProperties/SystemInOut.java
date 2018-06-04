@@ -1,0 +1,56 @@
+package com.cn.xulieAndProperties;
+
+import java.io.BufferedReader;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.OutputStream;
+import java.io.PrintStream;
+import java.util.Scanner;
+
+public class SystemInOut {
+
+	public static void main(String[] args) throws IOException{
+		
+//		BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+//		String line = reader.readLine();
+//		System.out.println(line);
+//		reader.close();
+		
+		Scanner scanner = new Scanner(System.in);
+		
+	}
+	
+	
+	public static void Demo_02()throws IOException{
+		
+		System.setIn(new FileInputStream("a.txt"));
+		System.setOut(new PrintStream("b.txt"));
+		
+		InputStream inputStream = System.in;
+		OutputStream outputStream = System.out;
+		
+		int b;
+		
+		while ((b = inputStream.read())!= -1) {
+			
+			outputStream.write(b);
+		}
+		
+		inputStream.close();
+		outputStream.close();
+	}
+	
+	public static void Demo_01() throws IOException{
+		
+		InputStream inputStream = System.in;
+		
+		int x = inputStream.read();
+		
+		System.out.println(x);
+		
+		inputStream.close();
+	}
+}

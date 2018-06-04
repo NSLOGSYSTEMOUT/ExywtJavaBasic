@@ -1,0 +1,14 @@
+package com.cn.xulieAndProperties;
+
+import java.io.PrintStream;
+
+public class printStreamTest {
+
+	public static void main(String[] args) {
+		
+		//和方便的将对象toString()结果输出，而且自动使用刷新模式输出
+		PrintStream printStream = System.out;
+		
+		printStream.println("zs");
+	}
+}

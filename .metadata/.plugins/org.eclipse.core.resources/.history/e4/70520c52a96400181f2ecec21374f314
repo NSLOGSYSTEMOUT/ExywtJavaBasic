@@ -1,0 +1,20 @@
+package com.cn.xulieAndProperties;
+
+import java.util.Properties;
+
+public class PropertiesTest {
+
+	public static void main(String[] args) {
+		
+		//Properties HashTable的子类 
+		Properties properties = new Properties();
+//		properties.put("abc", 123);
+		
+		properties.setProperty("a", "123");
+		properties.setProperty("name", "123dfds");
+		properties.setProperty("age", 16);
+		System.out.println(properties);
+		
+		
+	}
+}

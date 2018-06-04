@@ -1,0 +1,17 @@
+package com.cn.xulieAndProperties;
+
+import java.io.IOException;
+import java.io.RandomAccessFile;
+
+public class RandomAccessFileTest {
+
+	
+	public static void main(String[] args) throws IOException{
+		
+		RandomAccessFile file = new RandomAccessFile("a.txt", "rw");
+//		file.write(97);
+		System.out.println(file.read());
+		file.close();
+				
+	}
+}

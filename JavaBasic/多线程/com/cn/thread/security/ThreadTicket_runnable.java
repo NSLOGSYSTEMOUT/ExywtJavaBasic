@@ -1,0 +1,46 @@
+package com.cn.thread.security;
+
+public class ThreadTicket_runnable {
+
+	public static void main(String[] args) {
+		
+		//创建对象就创建了一次
+		MyTicket ticket = new MyTicket();
+		
+		new Thread(ticket).start();
+		new Thread(ticket).start();
+		new Thread(ticket).start();
+		new Thread(ticket).start();
+		
+//		start();多次对同一个线程启动时非法的
+	}
+}
+
+class MyTicket implements Runnable{
+	
+	private int tickets = 100;
+	@Override
+	public void run() {
+		
+		while (true) {
+			
+			//创建对象就创建了一次 可以用this
+			synchronized (Ticket.class) {
+				//当出现多个线程修改同一个数据的时候需要用同步锁
+				if (tickets == 0) {
+					System.out.println("卖完....");
+					break;
+				}
+				
+				try {
+					Thread.sleep(10);
+				} catch (InterruptedException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				
+				System.out.println(Thread.currentThread().getName() + "..这是第"+tickets--+"号票" );
+			}
+		}
+	}
+}

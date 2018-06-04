@@ -1,0 +1,21 @@
+package com.cn.IO;
+
+import java.io.FileInputStream;
+import java.io.IOException;
+
+public class ChineseTest {
+
+	public static void main(String[] args) throws IOException{
+		
+		
+		//一个中文两个字节
+		FileInputStream fileInputStream = new FileInputStream("bbb.txt");
+		byte[] arr1 = new byte[3];
+		
+		int b;
+		while ((b = fileInputStream.read(arr1)) != -1) {
+			
+			System.out.println(new String(arr1, 0, b));
+		}
+	}
+}

@@ -1,0 +1,5 @@
+package com.cn.singleton;
+
+public class Singleton_model {
+
+}

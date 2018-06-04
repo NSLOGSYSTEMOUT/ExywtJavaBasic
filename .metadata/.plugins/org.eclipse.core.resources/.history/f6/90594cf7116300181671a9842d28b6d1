@@ -1,0 +1,58 @@
+package com.cn.IO;
+
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.Reader;
+import java.io.Writer;
+
+public class IOtest {
+
+	/**
+	 * 字节流可以处理任何数据（都是以字节流的形式存储的）
+	 * 字符流只能操作纯字符数据
+	 * @throws IOException 
+	 * */
+	
+	public static void main(String[] args) throws IOException {
+		
+		//创建字节输出流对象如果没有文件自动创建一个
+		FileOutputStream outputStream = new FileOutputStream("bbb.txt");
+		
+		outputStream.write(9);
+		outputStream.write(8);
+		outputStream.write(7);
+		
+		outputStream.close();
+	}
+	
+	public static void Demo_01() throws IOException{
+		
+		//字节流 抽象类不能直接生成对象的InputStream OutputStream
+		//字符流：Writer Reader
+//		FileInputStream
+//	创建流对象
+		FileInputStream fileInputStream = new FileInputStream("ccc.txt");
+		//硬盘上读取一个字节
+		
+//		int x = fileInputStream.read();
+//		System.out.println(x);
+//		
+//		int y = fileInputStream.read();
+//		System.out.println(y);
+		//一次读取一个字节，文件结束标志位-1不是有效的字节
+		
+		int r; //read()读取的为Byte却使用int返回接收 -1会停止遍历损失精度反码补码的形式
+		
+		while ((r=fileInputStream.read() )!=-1) {
+			
+			System.out.println(r);
+		}
+		
+//		关闭释放资源
+		fileInputStream.close();
+	}
+}
+

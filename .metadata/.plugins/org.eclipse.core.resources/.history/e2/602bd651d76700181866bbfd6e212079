@@ -1,0 +1,30 @@
+package com.cn.thread.security;
+
+public class Thread_DeadLock {
+
+	public static String s1 = "左";
+	public static String s2 = "右";
+	
+	public static void main(String[] args) {
+		
+		
+		new Thread(){
+			
+			public void run() {
+		
+				while (true) {
+				
+					synchronized (s1) {
+					
+						System.out.println("获取"+s1+"等待"+s2);
+						
+						synchronized (s2) {
+							
+							System.out.println("拿到"+s2+"开始");
+						}
+					}
+				}
+			}
+		};
+	}
+}

@@ -1,0 +1,43 @@
+package com.cn.thread.syn;
+
+public class Thread_synchronized {
+
+	public static void main(String[] args) {
+		
+		Printer_my p = new Printer_my();
+		
+		new Thread(){
+		
+			public void run(){
+				
+				while (true) {
+					p.print1();
+				}
+			}
+		}.start();
+
+		new Thread(){
+			
+			public void run() {
+				while (true) {
+					
+					p.print2();
+				}
+			}
+		}.start();
+	}
+}
+
+
+class Printer_my {
+	
+	public void print1() {
+		
+		System.out.println("aaaaaaaaaaaaaa");
+	}
+	
+	public void print2() {
+		
+		System.out.println("bbbbbbbbbbbbbb");
+	}
+}

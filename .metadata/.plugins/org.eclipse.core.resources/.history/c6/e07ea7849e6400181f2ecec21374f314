@@ -1,0 +1,37 @@
+package com.cn.xulieAndProperties;
+
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+
+public class ObjectOutPutSreamTest {
+
+	public static void main(String[] args) throws IOException, ClassNotFoundException{
+		
+		
+		ObjectInputStream inputStream = new ObjectInputStream(new FileInputStream("person.txt"));
+		Person pp1 = (Person)inputStream.readObject();
+		Person pp2 = (Person)inputStream.readObject();
+		
+		System.out.println(pp1);
+		System.out.println(pp2);
+		inputStream.close();
+	}
+	
+	public static void Demo_01() throws IOException{
+		
+		Person p1 = new Person(23, "zhangsan");
+		Person p2 = new Person(24, "李四");
+		
+		//序列化将对象写入文档
+		
+		ObjectOutputStream outputStream = new ObjectOutputStream(new FileOutputStream("person.txt"));
+		
+		outputStream.writeObject(p1);
+		outputStream.writeObject(p2);
+		
+		outputStream.close();
+	}
+}

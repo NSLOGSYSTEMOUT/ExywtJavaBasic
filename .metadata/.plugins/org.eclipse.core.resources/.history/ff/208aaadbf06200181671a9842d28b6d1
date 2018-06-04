@@ -1,0 +1,21 @@
+package com.cn.fileIO;
+
+import java.io.File;
+import java.io.IOException;
+
+public class FileTest {
+
+	
+	public static void main(String[] args) throws IOException {
+		
+//		File file = new File("/Users/sai/Desktop/数据结构.rtf ");
+		
+		File file = new File("/Users/sai/Desktop");
+		String child = "数据结构.rtf";
+		File path = new File(file, child);
+		System.out.println(path.exists());
+		
+		File createF = new File("readme.txt");
+		System.out.println(createF.createNewFile());
+	}
+}

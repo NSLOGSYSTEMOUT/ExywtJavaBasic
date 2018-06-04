@@ -1,0 +1,15 @@
+		
+		reader.close();
+		}
+			System.out.println(len);
+			
+		while ((len = reader.readLine())!= null) {
+		
+		String len;
+		
+		BufferedReader reader = new BufferedReader(new FileReader("bbb.txt"));
+		
+		Demo_03_copyWriter();
+	
+public static void main(String[] args) throws IOException {
+中文,你好你好?哈哈哈新添加的字符新添加的字符

@@ -1,0 +1,58 @@
+package com.cn.thread.syn;
+
+public class Thread_synchronized {
+
+	public static void main(String[] args) {
+		
+		Printer_my p = new Printer_my();
+		
+		new Thread(){
+		
+			public void run(){
+				
+				while (true) {
+					p.print1();
+				}
+			}
+		}.start();
+
+		new Thread(){
+			
+			public void run() {
+				while (true) {
+					
+					p.print2();
+				}
+			}
+		}.start();
+	}
+}
+
+
+class Printer_my {
+	
+	public void print1() {
+		
+		synchronized () {
+		
+			System.out.print("你");
+			System.out.print("好");
+			System.out.print("啊");
+			System.out.print("\r\n");
+		}
+		
+	}
+	
+	public void print2() {
+		
+		//同步代码块加锁执行完毕后 锁释放
+		synchronized () {
+			System.out.print("a");
+			System.out.print("b");
+			System.out.print("c");
+			System.out.print("d");
+			System.out.print("\r\n");	
+		}
+		
+	}
+}

@@ -1,0 +1,9 @@
+package com.cn.xulieAndProperties;
+
+public class ObjectOutPutSream {
+
+	public static void main(String[] args) {
+		
+		
+	}
+}

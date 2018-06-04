@@ -1,0 +1,15 @@
+中文,你好你好?哈哈哈新添加的字符新添加的字符
+public static void main(String[] args) throws IOException {
+	
+		Demo_03_copyWriter();
+		
+		BufferedReader reader = new BufferedReader(new FileReader("bbb.txt"));
+		
+		String len;
+		
+		while ((len = reader.readLine())!= null) {
+			
+			System.out.println(len);
+		}
+		reader.close();
+		

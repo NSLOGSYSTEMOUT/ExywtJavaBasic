@@ -1,0 +1,17 @@
+package com.cn.threadTest;
+
+public class Threadyield {
+
+	public static void main(String[] args) {
+		
+			new MyThread().start();
+			new MyThread().start();
+		
+	}
+}
+
+
+class MyThread extends Thread{
+	
+	
+}

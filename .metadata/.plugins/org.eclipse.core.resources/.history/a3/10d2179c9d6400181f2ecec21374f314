@@ -1,0 +1,24 @@
+package com.cn.xulieAndProperties;
+
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectOutputStream;
+
+public class ObjectOutPutSreamTest {
+
+	public static void main(String[] args) throws IOException{
+		
+		Person p1 = new Person(23, "zhangsan");
+		Person p2 = new Person(24, "李四");
+		
+		//序列化将对象写入文档
+		
+		ObjectOutputStream outputStream = new ObjectOutputStream(new FileOutputStream("person.txt"));
+		
+		outputStream.writeObject(p1);
+		outputStream.writeObject(p2);
+		
+		outputStream.close();
+		
+	}
+}

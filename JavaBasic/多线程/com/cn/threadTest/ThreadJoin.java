@@ -1,0 +1,46 @@
+package com.cn.threadTest;
+
+public class ThreadJoin {
+
+	public static void main(String[] args) {
+		
+		//加入线程join相当于插队
+		
+		Thread t1 = new Thread(){
+			
+			public void run() {
+			
+				for (int i = 0; i < 10; i++) {
+					System.out.println(getName() + " .........a");
+				}
+			}
+		};
+		
+		
+		Thread t2 = new Thread(){
+			public void run() {
+				for (int i = 0; i < 10; i++) {
+					
+					if (i== 2) {
+						try { 
+							
+							//匿名内部类使用外部局部变量的时候需要用final修饰 jdk某个版本后默认修饰
+							//
+//							t1.join();
+							//插队执行的时间执行完毕之后交替执行
+							t1.join(1);
+						} catch (InterruptedException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						}
+					}
+					
+					System.out.println(getName() + " .........b");
+				}
+			}
+		};
+
+		t1.start();
+		t2.start();
+	}
+}

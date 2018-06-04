@@ -1,0 +1,19 @@
+package com.cn.fileReader;
+
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+
+public class ReaderTest {
+
+	public static void main(String[] args) throws IOException {
+		
+		FileReader  fileReader = new FileReader("bbb.txt");
+		
+		int x = fileReader.read();
+		System.out.println(x);
+		char  c = (char)x;
+		System.out.println(c);
+		
+	}
+}

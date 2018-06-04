@@ -1,0 +1,33 @@
+package com.cn;
+
+import java.io.File;
+
+public class PrintPathFileAndDir {
+
+	public static void main(String[] args) {
+		
+		//获取文件夹调用
+		File dir = CountFileSize.getDir();
+		printLev(dir,0);
+	}
+	
+	public static void printLev(File dir, int lev) {
+		
+		//把文件夹中的文件与文件在按层级打印
+		File[] subFils = dir.listFiles();
+		
+		for (File file : subFils) {
+			
+//			for(int i =0; i < lev; i++){
+//				System.out.println("   ");
+//			}
+			
+			System.out.println(file);
+			if (file.isDirectory()) {
+				
+				printLev(file, lev+1);
+			}
+			
+		}
+	}
+}

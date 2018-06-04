@@ -1,0 +1,22 @@
+package com.cn.xulieAndProperties;
+
+import java.io.DataOutputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.util.zip.DeflaterOutputStream;
+
+public class DataSreamTest {
+
+	public static void main(String[] args) throws IOException{
+		
+		
+		DataOutputStream outputStream = new DataOutputStream(new FileOutputStream("a.txt"));
+		
+		outputStream.writeInt(997);
+		outputStream.writeInt(998);
+		outputStream.writeInt(999);
+		
+		outputStream.close();
+		
+	}
+}

@@ -1,0 +1,37 @@
+package com.cn.threadTest;
+
+public class ThreadPriority {
+
+	public static void main(String[] args) {
+		
+		//线程默认值为5  范围（1--10）
+		
+		Thread t1 = new Thread(){
+			
+			public void run() {
+				
+				for (int i = 0; i < 1000; i++) {
+					
+					System.out.println(getName() +"  .......a");
+				}
+			}
+		};
+		
+		Thread t2 = new Thread(){
+			
+			public void run() {
+				
+				for (int i = 0; i < 1000; i++) {
+					
+					System.out.println(getName() +"  .......a");
+				}
+			}
+		};
+		
+		t1.setPriority(10);
+		t2.setPriority(1);
+		
+		t1.start();
+		t2.start();
+	}
+}

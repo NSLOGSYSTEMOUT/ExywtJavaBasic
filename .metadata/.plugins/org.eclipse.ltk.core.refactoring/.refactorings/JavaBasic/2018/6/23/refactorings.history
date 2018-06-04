@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;Thread_synchronized.java&apos; to &apos;JavaBasic/多线程/com.cn.thread.syn&apos;&#x0A;- Original project: &apos;JavaBasic&apos;&#x0A;- Destination element: &apos;JavaBasic/多线程/com.cn.thread.syn&apos;&#x0A;- Original element: &apos;com.cn.thread.syn.Thread_synchronized.java&apos;" description="Copy compilation unit" destination="/多线程&lt;com.cn.thread.syn" element1="/多线程&lt;com.cn.thread.syn{Thread_synchronized.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1528101324071" units="1" version="1.0"/>
+</session>

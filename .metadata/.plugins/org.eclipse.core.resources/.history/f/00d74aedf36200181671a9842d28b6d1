@@ -1,0 +1,53 @@
+package com.cn.fileIO;
+
+import java.io.File;
+import java.io.IOException;
+
+public class FileTest {
+
+	
+	public static void main(String[] args) throws IOException  {
+		
+//		File file1 = new File("readme.txt");
+//		File file2 = new File("changeR");
+//		System.out.println(file1.renameTo(file2));
+
+		File dir = new File("C");
+		System.out.println(dir.isDirectory());
+		
+		File dir2 = new File("changeR");
+		dir2.setReadable(false);
+		System.out.println(dir2.isFile());
+		
+		//windows true 认为所有的文件都是可读的 ，false
+		System.out.println(dir2.canRead());
+		
+		dir2.setWritable(false);
+		System.out.println(dir2.canWrite());
+	}
+	
+	public static void Demo_02() {
+
+		//文件夹与多层文件夹的创建
+		File dir = new File("A");
+		System.out.println(dir.mkdir());
+		//window \\
+		File dir2 = new File("C/D");
+		System.out.println(dir2.mkdirs());
+		//只可以删除为空的文件夹
+//		dir2.delete();
+	}
+	
+	public static void Demo_01()  throws IOException{
+		
+		//文件的创建
+//		File file = new File("/Users/sai/Desktop/数据结构.rtf ");
+		File file = new File("/Users/sai/Desktop");
+		String child = "数据结构.rtf";
+		File path = new File(file, child);
+		System.out.println(path.exists());
+		
+		File createF = new File("readme.txt"); 
+		System.out.println(createF.createNewFile());		
+	}
+}

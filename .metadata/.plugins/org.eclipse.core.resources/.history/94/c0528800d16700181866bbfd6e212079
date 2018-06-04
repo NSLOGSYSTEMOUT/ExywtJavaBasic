@@ -1,0 +1,5 @@
+package com.cn.thread.syn;
+
+public class Thread_synchronized {
+
+}

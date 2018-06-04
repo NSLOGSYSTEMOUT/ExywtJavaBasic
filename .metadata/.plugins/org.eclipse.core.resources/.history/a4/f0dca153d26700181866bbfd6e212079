@@ -1,0 +1,65 @@
+package com.cn.thread.syn;
+
+public class Thread_synchronized2 {
+
+	public static void main(String[] args) {
+		
+		Printer_my2 p = new Printer_my2();
+		
+		new Thread(){
+		
+			public void run(){
+				
+				while (true) {
+					p.print1();
+				}
+			}
+		}.start();
+
+		new Thread(){
+			
+			public void run() {
+				while (true) {
+					
+					p.print2();
+				}
+			}
+		}.start();
+	}
+}
+
+
+class Printer_my2 {
+	
+	Demo demo = new Demo();
+	public void print1() {
+		
+		
+		//同步代码块加锁执行完毕后 锁释放 ，锁对象可以是任意的 
+		//不可以用匿名对象，因为匿名对象不是同一个对象
+		synchronized (demo) {
+		
+			System.out.print("你");
+			System.out.print("好");
+			System.out.print("啊");
+			System.out.print("\r\n");
+		}
+		
+	}
+	
+	public void print2() {
+		
+		
+		synchronized (demo) {
+			System.out.print("a");
+			System.out.print("b");
+			System.out.print("c");
+			System.out.print("d");
+			System.out.print("\r\n");	
+		}
+		
+	}
+}
+
+
+class Demo{}

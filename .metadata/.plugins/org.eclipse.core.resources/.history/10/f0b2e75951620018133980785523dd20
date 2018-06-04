@@ -1,0 +1,21 @@
+package com.cn.collection;
+
+public class AppleE<A> {
+	
+	private A info;
+	
+	public AppleE(){
+		this.info = info;
+	}
+
+	public A getInfo() {
+		return info;
+	}
+
+	public void setInfo(A info) {
+		this.info = info;
+	}
+	
+	
+
+}

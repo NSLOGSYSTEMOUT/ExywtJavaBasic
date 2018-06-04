@@ -1,0 +1,59 @@
+package com.cn.xulieAndProperties;
+
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.util.ArrayList;
+
+public class ObjectOutPutSreamTest {
+
+	public static void main(String[] args) throws IOException, ClassNotFoundException{
+		
+		//优化对象的读取
+		Person p1 = new Person(23, "zhangsan");
+		Person p2 = new Person(24, "李四");
+		Person p3 = new Person(25, "wann");
+		Person p4 = new Person(26, "六六");
+		
+		ArrayList<Person> list = new ArrayList<>();
+		list.add(p1);
+		list.add(p2);
+		list.add(p3);
+		list.add(p4);
+		
+		ObjectOutputStream outputStream = new ObjectOutputStream(new FileOutputStream("personTwo.txt"));
+		outputStream.writeObject(list);
+		outputStream.close();
+		
+	}
+	
+	public static void Demo_02_readObject() throws IOException, ClassNotFoundException{
+		
+		//读取处存取对象输入流的反序列化
+		ObjectInputStream inputStream = new ObjectInputStream(new FileInputStream("person.txt"));
+		Person pp1 = (Person)inputStream.readObject();
+		Person pp2 = (Person)inputStream.readObject();
+		//文件读取到末尾出现EOF异常
+		
+		System.out.println(pp1);
+		System.out.println(pp2);
+		inputStream.close();
+	}
+	
+	public static void Demo_01() throws IOException{
+		
+		Person p1 = new Person(23, "zhangsan");
+		Person p2 = new Person(24, "李四");
+		
+		//序列化将对象写入文档
+		
+		ObjectOutputStream outputStream = new ObjectOutputStream(new FileOutputStream("person.txt"));
+		
+		outputStream.writeObject(p1);
+		outputStream.writeObject(p2);
+		
+		outputStream.close();
+	}
+}

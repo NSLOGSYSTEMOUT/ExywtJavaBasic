@@ -1,0 +1,18 @@
+package com.cn.xulieAndProperties;
+
+import java.io.IOException;
+import java.io.InputStream;
+
+public class SystemInOut {
+
+	public static void main(String[] args) throws IOException{
+		
+		InputStream inputStream = System.in;
+		
+		int x = inputStream.read();
+		
+		System.out.println(x);
+		
+		inputStream.close();
+	}
+}

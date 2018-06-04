@@ -1,0 +1,49 @@
+package com.cn.xulieAndProperties;
+
+import java.io.ByteArrayOutputStream;
+import java.io.FileInputStream;
+import java.io.IOException;
+
+public class ByteArrayOutPutStearmTest  {
+
+	public static void main(String[] args) throws IOException{
+
+		
+		FileInputStream inputStream = new FileInputStream("a.txt");
+		
+		ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+		
+		byte[] arr = new byte[5];
+		int len;
+		
+		while ((len = inputStream.read(arr)) != -1) {
+			
+//			outputStream.write(arr, 0, len);
+			System.out.println(new String(arr, 0, len));
+		}
+		
+		System.out.println(outputStream.toString());
+		inputStream.close();
+	}
+	
+	public static void Demo_01() throws IOException {
+		
+		
+		FileInputStream fileInputStream = new FileInputStream("a.txt");
+		
+		ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+		
+		int b;
+		
+		while ((b = fileInputStream.read()) != -1) {
+			
+			//读取到的数据逐个写入内存中
+			outputStream.write(b);
+		}
+		
+//		byte[] array = outputStream.toByteArray();
+//		System.out.println(new String(array));
+		System.out.println(outputStream.toString());
+		fileInputStream.close();
+	}
+}

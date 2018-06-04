@@ -1,0 +1,43 @@
+package com.cn.threadTest;
+
+public class ThreadInnerNiming {
+
+	public static void main(String[] args) {
+		
+		new Thread(){  //继承thread类
+			
+			public void run() { //重写run方法
+
+//				for (int i = 0; i < 1000; i++) {
+					
+					System.out.println(this.getName() + "*******");
+//				}
+			}
+			
+			
+		}.start();
+		
+		new Thread(){
+			
+			public void run() {
+				
+				System.out.println(this.getName()+"b******");
+			}
+		}.start();
+		
+		
+//		new Thread(new Runnable() {    //将runnable的子类对象创给thread的构造方法
+//			
+//			@Override
+//			public void run() { 		//重写run方法
+//
+//				for (int i = 0; i < 1000; i++) {
+//					System.out.println(" runable *****");
+//				}
+//			}
+//		}).start();
+		
+		
+		
+	}
+}

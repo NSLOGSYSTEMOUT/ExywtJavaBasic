@@ -1,0 +1,5 @@
+package com.cn.thread.security;
+
+public class ThreadSecurity_Ticket {
+
+}

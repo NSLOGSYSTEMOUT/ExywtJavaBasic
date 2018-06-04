@@ -1,0 +1,47 @@
+package com.cn.thread.security;
+
+
+public class ThreadSecurity_Ticket {
+
+	public static void main(String[] args) {
+
+		//多线程使用同步锁的时候容易产生死锁
+		new Ticket().start();
+		new Ticket().start();
+		new Ticket().start();
+		new Ticket().start();
+	}
+}
+
+class Ticket extends Thread{
+	
+	private static int ticket = 100;
+	//将此对象传入到锁中必须是静态的
+//	private static Object Obj = new Object();
+	
+	@Override
+	public void run() {
+	
+		while (true) {
+		
+			synchronized (Ticket.class) {
+				//当出现多个线程修改同一个数据的时候需要用同步锁
+				if (ticket == 0) {
+					System.out.println("卖完....");
+					break;
+				}
+				
+				try {
+					Thread.sleep(10);
+				} catch (InterruptedException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				
+				System.out.println(getName() + "..这是第"+ticket--+"号票" );
+			}
+			
+		}
+		
+	}
+}
