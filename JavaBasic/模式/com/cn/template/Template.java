@@ -18,7 +18,6 @@ public class Template {
 	}
 }
 
-
 abstract class getTime{
 	
 	public final Long getGap() {
@@ -36,12 +35,10 @@ class Demo extends getTime{
 	
 	@Override
 	public void code() {
-	
 		int i = 0;
 		while (i < 10000) {
 			System.out.println("..");
 			i++;
 		}
-		
 	}
 }
